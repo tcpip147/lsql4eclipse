@@ -23,7 +23,7 @@ import org.eclipse.ui.ide.FileStoreEditorInput;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
 
-import com.tcpip147.lsql.control.SqlEditor;
+import com.tcpip147.lsql.editor.control.SqlEditor;
 
 public class LsqlMultiPageEditor extends MultiPageEditorPart {
 

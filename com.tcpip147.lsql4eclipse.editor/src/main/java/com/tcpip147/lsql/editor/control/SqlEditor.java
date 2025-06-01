@@ -1,4 +1,4 @@
-package com.tcpip147.lsql.control;
+package com.tcpip147.lsql.editor.control;
 
 import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.jface.text.source.IAnnotationModel;

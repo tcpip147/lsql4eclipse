@@ -1,4 +1,4 @@
-package com.tcpip147.lsql.control;
+package com.tcpip147.lsql.editor.control;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 
-import com.tcpip147.lsql.util.KeyStrokeAccelators;
+import com.tcpip147.lsql.editor.util.KeyStrokeAccelators;
 
 public class LineTextField extends SourceViewer {
 

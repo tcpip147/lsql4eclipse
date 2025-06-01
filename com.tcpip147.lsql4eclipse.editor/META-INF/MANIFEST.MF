@@ -12,7 +12,8 @@ Require-Bundle: org.eclipse.jface.text,
  org.eclipse.core.runtime,
  org.eclipse.wst.sse.ui,
  org.eclipse.search,
- org.eclipse.jdt.core
+ org.eclipse.jdt.core,
+ org.antlr.antlr4-runtime;bundle-version="4.13.2"
 Automatic-Module-Name: lsql4eclipse
 Bundle-Activator: com.tcpip147.lsql.editor.Activator
 Bundle-ActivationPolicy: lazy

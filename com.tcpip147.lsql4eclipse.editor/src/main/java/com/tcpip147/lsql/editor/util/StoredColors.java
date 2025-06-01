@@ -1,4 +1,4 @@
-package com.tcpip147.lsql.util;
+package com.tcpip147.lsql.editor.util;
 
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;

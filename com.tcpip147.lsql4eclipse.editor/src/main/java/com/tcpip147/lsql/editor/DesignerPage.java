@@ -24,10 +24,10 @@ import org.eclipse.ui.IPersistableElement;
 import org.eclipse.ui.IStorageEditorInput;
 import org.eclipse.ui.PartInitException;
 
-import com.tcpip147.lsql.control.LineTextField;
-import com.tcpip147.lsql.control.ListEx;
-import com.tcpip147.lsql.control.SqlEditor;
-import com.tcpip147.lsql.util.SWTControls;
+import com.tcpip147.lsql.editor.control.LineTextField;
+import com.tcpip147.lsql.editor.control.ListEx;
+import com.tcpip147.lsql.editor.control.SqlEditor;
+import com.tcpip147.lsql.editor.util.SWTControls;
 
 public class DesignerPage extends SashForm {
 

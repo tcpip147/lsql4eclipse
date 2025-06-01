@@ -1,4 +1,4 @@
-package com.tcpip147.lsql.util;
+package com.tcpip147.lsql.editor.util;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -7,10 +7,10 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
 
-import com.tcpip147.lsql.control.LineTextField;
-import com.tcpip147.lsql.control.ListEx;
-import com.tcpip147.lsql.control.SqlEditor;
 import com.tcpip147.lsql.editor.Activator;
+import com.tcpip147.lsql.editor.control.LineTextField;
+import com.tcpip147.lsql.editor.control.ListEx;
+import com.tcpip147.lsql.editor.control.SqlEditor;
 
 public class SWTControls {
 

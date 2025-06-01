@@ -6,7 +6,8 @@ Bundle-Version: 1.0.0
 Require-Bundle: org.eclipse.jface.text,org.eclipse.core.resources,org.ec
  lipse.ui,org.eclipse.ui.editors,org.eclipse.ui.ide,org.eclipse.ui.workb
  ench.texteditor,org.eclipse.core.runtime,org.eclipse.wst.sse.ui,org.ecl
- ipse.search,org.eclipse.jdt.core
+ ipse.search,org.eclipse.jdt.core,org.antlr.antlr4-runtime;bundle-versio
+ n="4.13.2"
 Automatic-Module-Name: lsql4eclipse
 Bundle-Activator: com.tcpip147.lsql.editor.Activator
 Bundle-ActivationPolicy: lazy
