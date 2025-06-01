@@ -44,6 +44,8 @@ public class DesignerPage extends SashForm {
 	private ToolItem btnMoveDown;
 	private ListEx ltQueries;
 
+	private LsqlFile file;
+
 	public DesignerPage(Composite parent, LsqlContext ctx) {
 		super(parent, SWT.HORIZONTAL);
 		this.ctx = ctx;
@@ -53,6 +55,8 @@ public class DesignerPage extends SashForm {
 
 		createLeftPanel();
 		createRightPanel();
+
+		file = new LsqlFile(ctx.getMultiPageEditor().getEditorInput());
 
 		setWeights(new int[] { 220, 80 });
 	}

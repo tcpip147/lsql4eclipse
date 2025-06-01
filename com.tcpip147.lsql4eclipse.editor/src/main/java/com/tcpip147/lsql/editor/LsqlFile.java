@@ -2,46 +2,45 @@ package com.tcpip147.lsql.editor;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.regex.Pattern;
 
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IFileEditorInput;
 
+import com.tcpip147.lsql.editor.grammar.LsqlListener;
+import com.tcpip147.lsql.editor.grammar.gen.LsqlLexer;
+import com.tcpip147.lsql.editor.grammar.gen.LsqlParser;
+
 public class LsqlFile {
 
-	private List<LsqlQuery> queryList = new LinkedList<>();
-
-	public void parse(IEditorInput input) {
-		List<Token> tokens = tokenize(input);
+	public LsqlFile(IEditorInput input) {
+		parse(input);
 	}
 
-	private List<Token> tokenize(IEditorInput input) {
+	public void parse(IEditorInput input) {
 		if (input instanceof IFileEditorInput) {
 			IFile file = ((IFileEditorInput) input).getFile();
 			try (InputStream is = file.getContents()) {
-				String content = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-				List<Token> tokens = new ArrayList<>();
-				
+				CharStream cs = CharStreams.fromStream(is);
+				LsqlLexer lexer = new LsqlLexer(cs);
+				CommonTokenStream tokens = new CommonTokenStream(lexer);
+				LsqlParser parser = new LsqlParser(tokens);
+				ParseTree tree = parser.statements();
+				LsqlListener listener = new LsqlListener();
+				ParseTreeWalker walker = new ParseTreeWalker();
+				walker.walk(listener, tree);
+				for (LsqlQuery query : listener.getQueryList()) {
+					System.out.println("Query: " + query.id);
+				}
 			} catch (CoreException | IOException e) {
 				// TODO
 			}
 		}
-		return null;
-	}
-
-	private class Token {
-		private static int PROPERTY = 1;
-		private static int STRING = 2;
-		private static int SPACE = 3;
-		private static int LINE_FEED = 4;
-
-		private int id;
-		private String value;
 	}
 }
