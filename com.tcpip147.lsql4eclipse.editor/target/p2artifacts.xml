@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<artifacts size='1'>
+  <artifact classifier='osgi.bundle' id='com.tcpip147.lsql4eclipse.editor' version='1.0.0'>
+    <properties size='9'>
+      <property name='artifact.size' value='2528'/>
+      <property name='download.size' value='2528'/>
+      <property name='download.checksum.sha-512' value='095ae3c15c488c5b4bf05a2ad8ad94be0cb32432e8893f247023c406ba79593fac1a568e81a1e61e515deedb091b66e090d2d95631a685f20823aa72e908a259'/>
+      <property name='download.checksum.sha-1' value='d64a88e404f60d2bd84948c9b9270a06b6e645fc'/>
+      <property name='download.checksum.sha-256' value='58f54def4bc0916ed1b9300625bf7dc5694cbf707fa97d36b67c2c609fa3e395'/>
+      <property name='maven-groupId' value='com.tcpip147'/>
+      <property name='maven-artifactId' value='com.tcpip147.lsql4eclipse.editor'/>
+      <property name='maven-version' value='1.0.0'/>
+      <property name='maven-type' value='eclipse-plugin'/>
+    </properties>
+  </artifact>
+</artifacts>
