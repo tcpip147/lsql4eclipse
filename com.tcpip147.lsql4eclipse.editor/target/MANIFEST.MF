@@ -1,15 +1,16 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: LSQL For Eclipse
-Bundle-SymbolicName: com.tcpip147.lsql.editor;singleton:=true
+Bundle-SymbolicName: com.tcpip147.lsql4eclipse.editor;singleton:=true
 Bundle-Version: 1.0.0
 Require-Bundle: org.eclipse.jface.text,org.eclipse.core.resources,org.ec
  lipse.ui,org.eclipse.ui.editors,org.eclipse.ui.ide,org.eclipse.ui.workb
  ench.texteditor,org.eclipse.core.runtime,org.eclipse.wst.sse.ui,org.ecl
- ipse.search,org.eclipse.jdt.core,org.antlr.antlr4-runtime;bundle-versio
- n="4.13.2"
+ ipse.search,org.eclipse.jdt.core,org.eclipse.wildwebdeveloper.embedder.
+ node,org.eclipse.lsp4e,org.eclipse.lsp4j,org.eclipse.lsp4j.jsonrpc
 Automatic-Module-Name: lsql4eclipse
 Bundle-Activator: com.tcpip147.lsql.editor.Activator
 Bundle-ActivationPolicy: lazy
+Export-Package: com.tcpip147.lsql.editor
 Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=21))"
 

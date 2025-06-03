@@ -37,6 +37,7 @@ public class LsqlMultiPageEditorActionBarContributor extends MultiPageEditorActi
 		if (actionBars != null) {
 			ITextEditor editor = (part instanceof ITextEditor) ? (ITextEditor) part : null;
 			if (editor != null) {
+				actionBars.clearGlobalActionHandlers();
 				actionBars.setGlobalActionHandler(ActionFactory.DELETE.getId(),
 						getAction(editor, ITextEditorActionConstants.DELETE));
 				actionBars.setGlobalActionHandler(ActionFactory.UNDO.getId(),

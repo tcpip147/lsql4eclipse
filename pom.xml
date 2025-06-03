@@ -31,6 +31,15 @@
 		<plugins>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-surefire-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<useUIHarness>true</useUIHarness>
+					<useUIThread>false</useUIThread>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-maven-plugin</artifactId>
 				<version>${tycho.version}</version>
 				<extensions>true</extensions>
@@ -44,7 +53,8 @@
 						<phase>package</phase>
 						<id>package-feature</id>
 						<configuration>
-							<finalName>${project.artifactId}_${unqualifiedVersion}.${buildQualifier}</finalName>
+							<finalName>
+								${project.artifactId}_${unqualifiedVersion}.${buildQualifier}</finalName>
 						</configuration>
 					</execution>
 				</executions>
@@ -79,6 +89,6 @@
 		</plugins>
 	</build>
 	<modules>
-		<module>com.tcpip147.lsql.editor</module>
+		<module>com.tcpip147.lsql4eclipse.editor</module>
 	</modules>
 </project>

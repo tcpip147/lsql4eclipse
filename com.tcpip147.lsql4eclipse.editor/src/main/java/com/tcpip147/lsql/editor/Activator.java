@@ -8,7 +8,7 @@ import org.osgi.framework.BundleContext;
 
 public class Activator extends AbstractUIPlugin {
 
-	public static final String PLUGIN_ID = "com.tcpip147.lsql.editor";
+	public static final String PLUGIN_ID = "com.tcpip147.lsql4eclipse.editor";
 	private static Activator plugin;
 
 	@Override
@@ -29,17 +29,17 @@ public class Activator extends AbstractUIPlugin {
 
 	@Override
 	protected void initializeImageRegistry(ImageRegistry registry) {
-		ImageDescriptor plus = imageDescriptorFromPlugin(PLUGIN_ID, "icons/plus.png");
+		ImageDescriptor plus = imageDescriptorFromPlugin(PLUGIN_ID, "icons/add_obj.png");
 		registry.put("plus", plus);
-		ImageDescriptor minus = imageDescriptorFromPlugin(PLUGIN_ID, "icons/minus.png");
+		ImageDescriptor minus = imageDescriptorFromPlugin(PLUGIN_ID, "icons/delete_obj.png");
 		registry.put("minus", minus);
-		ImageDescriptor pencil = imageDescriptorFromPlugin(PLUGIN_ID, "icons/pencil.png");
+		ImageDescriptor pencil = imageDescriptorFromPlugin(PLUGIN_ID, "icons/text_edit.gif");
 		registry.put("pencil", pencil);
-		ImageDescriptor copy = imageDescriptorFromPlugin(PLUGIN_ID, "icons/copy.png");
+		ImageDescriptor copy = imageDescriptorFromPlugin(PLUGIN_ID, "icons/copy_edit.png");
 		registry.put("copy", copy);
-		ImageDescriptor arrowUp = imageDescriptorFromPlugin(PLUGIN_ID, "icons/arrow-up.png");
+		ImageDescriptor arrowUp = imageDescriptorFromPlugin(PLUGIN_ID, "icons/prev_nav.png");
 		registry.put("arrow-up", arrowUp);
-		ImageDescriptor arrowDown = imageDescriptorFromPlugin(PLUGIN_ID, "icons/arrow-down.png");
+		ImageDescriptor arrowDown = imageDescriptorFromPlugin(PLUGIN_ID, "/icons/next_nav.png");
 		registry.put("arrow-down", arrowDown);
 	}
 

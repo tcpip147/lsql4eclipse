@@ -1,11 +1,9 @@
 package com.tcpip147.lsql.editor;
 
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IStorage;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
@@ -18,8 +16,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
-import org.eclipse.ui.IEditorInput;
-import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.IPersistableElement;
 import org.eclipse.ui.IStorageEditorInput;
 import org.eclipse.ui.PartInitException;
@@ -44,8 +40,6 @@ public class DesignerPage extends SashForm {
 	private ToolItem btnMoveDown;
 	private ListEx ltQueries;
 
-	private LsqlFile file;
-
 	public DesignerPage(Composite parent, LsqlContext ctx) {
 		super(parent, SWT.HORIZONTAL);
 		this.ctx = ctx;
@@ -55,9 +49,6 @@ public class DesignerPage extends SashForm {
 
 		createLeftPanel();
 		createRightPanel();
-
-		file = new LsqlFile(ctx.getMultiPageEditor().getEditorInput());
-
 		setWeights(new int[] { 220, 80 });
 	}
 

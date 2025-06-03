@@ -7,32 +7,6 @@
 		<artifactId>lsql4eclipse</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<artifactId>com.tcpip147.lsql.editor</artifactId>
+	<artifactId>com.tcpip147.lsql4eclipse.editor</artifactId>
 	<packaging>eclipse-plugin</packaging>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.antlr</groupId>
-				<artifactId>antlr4-maven-plugin</artifactId>
-				<version>4.13.2</version>
-				<configuration>
-					<arguments>
-						<argument>-package</argument>
-						<argument>com.tcpip147.lsql.editor.grammar.gen</argument>
-					</arguments>
-					<sourceDirectory>${basedir}/src/main/resources/antlr4</sourceDirectory>
-					<outputDirectory>
-						${basedir}/src/main/java/com/tcpip147/lsql/editor/grammar/gen</outputDirectory>
-				</configuration>
-				<executions>
-					<execution>
-						<id>antlr</id>
-						<goals>
-							<goal>antlr4</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
 </project>

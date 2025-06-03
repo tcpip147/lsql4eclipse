@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?artifactRepository version='1.1.0'?>
 <artifacts size='1'>
-  <artifact classifier='osgi.bundle' id='com.tcpip147.lsql.editor' version='1.0.0'>
+  <artifact classifier='osgi.bundle' id='com.tcpip147.lsql4eclipse.editor' version='1.0.0'>
     <properties size='9'>
-      <property name='artifact.size' value='32676'/>
-      <property name='download.size' value='32676'/>
-      <property name='download.checksum.sha-512' value='8c439c3aaf8662e0d8f9f5117bae1624822f71c17a488ca5551316543e7520943aff43028fc57a4de545bd220fa866dbc4d33e16b4fbaad4f3371126594355e4'/>
-      <property name='download.checksum.sha-1' value='183eeff034a0ce3cfe6c4272f4d3e517c0beee8b'/>
-      <property name='download.checksum.sha-256' value='3c3aef3fb6983ce52e889381a0bf9c79731a3c4a9f04d245651cd390125b511e'/>
+      <property name='artifact.size' value='100138'/>
+      <property name='download.size' value='100138'/>
+      <property name='download.checksum.sha-512' value='d719f12384708b39505f487cd1eb6c7fb3968a1cbc4ca601df22e6452cbcb6d65da0efd90d932af8ee0fef22f6242a845cbbef86d3cffd823ca1e3c21b796c52'/>
+      <property name='download.checksum.sha-1' value='2a69cf06471153d3a6c0f3c60437b7c59a41a030'/>
+      <property name='download.checksum.sha-256' value='d0bdf0cd2cf3a52bd50b090323502cf2db5a99a0b94f8610a92ed5f3b906cc27'/>
       <property name='maven-groupId' value='com.tcpip147'/>
-      <property name='maven-artifactId' value='com.tcpip147.lsql.editor'/>
+      <property name='maven-artifactId' value='com.tcpip147.lsql4eclipse.editor'/>
       <property name='maven-version' value='1.0.0'/>
       <property name='maven-type' value='eclipse-plugin'/>
     </properties>

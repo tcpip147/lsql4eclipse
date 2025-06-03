@@ -1,5 +1,9 @@
 package com.tcpip147.lsql.editor;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceChangeEvent;
@@ -11,6 +15,12 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.dialogs.IPageChangedListener;
 import org.eclipse.jface.dialogs.PageChangedEvent;
+import org.eclipse.jface.text.IDocument;
+import org.eclipse.lsp4j.DidOpenTextDocumentParams;
+import org.eclipse.lsp4j.TextDocumentItem;
+import org.eclipse.lsp4j.jsonrpc.Launcher;
+import org.eclipse.lsp4j.launch.LSPLauncher;
+import org.eclipse.lsp4j.services.LanguageServer;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
@@ -24,6 +34,8 @@ import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
 
 import com.tcpip147.lsql.editor.control.SqlEditor;
+import com.tcpip147.lsql.editor.lsp.LsqlLanguageClient;
+import com.tcpip147.lsql.editor.lsp.LsqlLanguageStreamProvider;
 
 public class LsqlMultiPageEditor extends MultiPageEditorPart {
 
@@ -70,6 +82,38 @@ public class LsqlMultiPageEditor extends MultiPageEditorPart {
 		} catch (PartInitException e) {
 			// TODO
 		}
+		connectToLspServer();
+	}
+
+	private void connectToLspServer() {
+		LsqlLanguageStreamProvider provider = new LsqlLanguageStreamProvider();
+		try {
+			provider.start();
+			InputStream in = provider.getInputStream();
+			OutputStream out = provider.getOutputStream();
+
+			LsqlLanguageClient client = new LsqlLanguageClient();
+			Launcher<LanguageServer> launcher = LSPLauncher.createClientLauncher(client, in, out);
+
+			LanguageServer server = launcher.getRemoteProxy();
+			client.connect(server);
+
+			launcher.startListening();
+
+			TextDocumentItem item = new TextDocumentItem();
+			IDocument document = editor.getDocumentProvider().getDocument(editor.getEditorInput());
+			String text = document.get().replaceAll("\r", "");
+			FileEditorInput input = (FileEditorInput) editor.getEditorInput();
+			item.setUri(input.getURI().toString());
+			item.setLanguageId("lsql");
+			item.setVersion(1);
+			item.setText(text);
+			DidOpenTextDocumentParams openParams = new DidOpenTextDocumentParams(item);
+			server.getTextDocumentService().didOpen(openParams);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	@Override

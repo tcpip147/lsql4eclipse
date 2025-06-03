@@ -46,7 +46,6 @@ public class LineTextField extends SourceViewer {
 		getTextWidget().addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
-				System.out.println(KeyStrokeAccelators.match(e, undoKeys));
 				if (KeyStrokeAccelators.match(e, undoKeys)) {
 					undoManager.undo();
 				} else if (KeyStrokeAccelators.match(e, redoKeys)) {
